@@ -1,0 +1,21 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+<div class="container table" style="border: 1px solid green;
+    margin-top: 30px">
+<center><h1>Sign In</h1></center><br><br>    
+<form action="{{ url_for('signin') }}" method="POST">
+	  <div class="form-group">
+      <label for="uname">Email:</label>
+      <input type="Email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      </div>
+    <div class="form-group">
+    <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button><a class="nav-link active" href="/signup">Create account?</a>
+    <a href="{{ url_for('resetPsw') }}">Forget Password...?</a>
+</form>
+</div>
+</div>
+{% endblock %}

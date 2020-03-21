@@ -1,0 +1,35 @@
+{% extends 'commonlayout.html'%}
+{% block body %}
+<div class="container-fluid">
+<!--<div class="row" style="padding: 30px;">
+	<li class="nav-item" >
+<img src="static/images/7.jpg" width="100" height="100">
+       <p><a button type="submit" class="btn btn-danger" class="nav-link" href="https://www.google.com/maps/place/Annamacharya+Institute+of+Technology+%26+Sciences::TIRUPATI/@13.6638742,79.4994853,15z/data=!4m5!3m4!1s0x0:0x52ac31398b7897eb!8m2!3d13.6638742!4d79.4994853 " ><b>Location</b></a>
+      </li></center></p>-->
+      <div class="row" style="padding: 20px;">
+	<div class="col-sm-4.5 text-white" rows="6" style="background-color: red;padding: 20px">Venkatapuram (Village),<br>
+Renigunta (Mandal),<br>
+Tirupati, Chittoor District,<br>
+Andhra Pradesh – 517520.<br>
+Email:governmentschemes123@gmail.com<br>
+Facebook:https://www.facebook.com/governmentschemes</div>
+
+
+
+	<div class="col-sm-7.5" style="padding: 5px">
+		<div class="col-sm-12" style="padding: 20px;background-color: blue">
+				<form  action="{{url_for('Contact_info')}}" method="POST" style="padding-left: 80px">
+
+					<input type="text" name="name" placeholder="Your name" required>
+					<input type="Email" name="email" placeholder="Your Email" required>
+					<input type="text" name="contact" placeholder="Your Contact" required>
+					<br><br>
+					<textarea class="form-control" name="suggestion" rows="5" placeholder="Your suggestions" required></textarea><br><br>
+					<center><button type="submit" class="btn btn-danger">Submit</button></center>
+				</form>
+
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+<div class="container">
+	<h2>Reset Password</h2>
+	   <form method="POST" action="{{ url_for('resetPsw') }}"> 
+	   	   <div class="form_group">
+	   	   	     <label for="email">Email</label>
+	   	   	     <input type="email" class="form_control" id="email" name="email" required>
+	   	   	</div>
+	   	   	<button type="submit" class="btn btn-primary">Reset</button>     
+	   	</form>
+</div>
+{% endblock %}	   	

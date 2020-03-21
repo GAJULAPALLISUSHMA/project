@@ -1,0 +1,78 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+<div class="container-fluid">
+	<div class="table" style="border:1px solid black">
+		{% if current_user.userType==1 %}
+		<table class="table">
+			<tr>
+				<th>Name</th>
+				<th>AdharNo</th>
+				<th>Emailaddress</th>
+				<th>Mobileno</th>
+				<th>AccountNO</th>
+				<th>Age</th>
+				<th>image</th>
+				<th>Category</th>
+				<th>img</th>
+				<th>Approved/NOT</th>
+			</tr>
+			{% for data in udata %}
+			<tr>
+				<td>{{ data.Name }}</td>
+				<td>{{ data.AdharNo }}</td>
+				<td>{{ data.Emailaddress }}</td>
+				<td>{{ data.Mobileno }}</td>
+				<td>{{ data.AccountNO }}</td>
+				<td>{{ data.Age }}</td>
+				<td>{{ data.image }}</td>
+				<td>{{ data.Category }}</td>
+				<td>{{ data.img }}</td>
+				{% if data.userType==1 %}
+				 <td><button class="btn btn text-success">APPROVED</button></td>
+				 {% else %}
+				 <td><button class="btn btn text-success">NOT ELIGIBLE</button></td>
+
+				{% endif %}
+				
+			</tr>
+		{% endfor %}
+		{% else %}
+		<table class="table">
+			<tr>
+				<th>Name</th>
+				<!--<th>AdharNo</th>-->
+				<th>Emailaddress</th>
+				<!--<th>Mobileno</th>
+				<th>AccountNO</th>-->
+				<th>Age</th>
+				<th>image</th>
+				<th>Category</th>
+				<th>img</th>
+				<th>Approved/NOT</th>
+			</tr>
+			{% for data in udata %}
+			<tr>
+				<td>{{ data.Name }}</td>
+				<!--<td>{{ data.AdharNo }}</td>-->
+				<td>{{ data.Emailaddress }}</td>
+				<!--<td>{{ data.Mobileno }}</td>
+				<td>{{ data.AccountNO }}</td>-->
+				<td>{{ data.Age }}</td>
+				<td>{{ data.image }}</td>
+				<td>{{ data.Category }}</td>
+				<td>{{ data.img }}</td>
+				{% if data.userType==1 %}
+				 <td><button class="btn btn text-success">APPROVED</button></td>
+				 {% else %}
+				 <td><button class="btn btn text-success">NOT ELIGIBLE</button></td>
+
+				{% endif %}
+				
+			</tr>
+		{% endfor %}	
+		{% endif %}
+
+	
+	</table>
+</div>	
+{% endblock %}

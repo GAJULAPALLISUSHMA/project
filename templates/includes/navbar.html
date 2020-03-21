@@ -1,0 +1,159 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<div class="container-fluid">
+
+<div class="row">
+   <div class="col-sm-1"><img src="../static/images/ss.jpg" alt="HaveIt" class="rounded-circle" style="height: 100px ; width: 80px">
+   </div>
+   <!-- <div class="col-sm-2" style="align:right; font-size:30px; font-family:courier;background-color:white;color: red">GOVERNMENTSCHEMES</div>
+    <div class="col-sm-2" style="background-color: white;height:150px"><img src="../static/images/big icon.jpg" alt="HaveIt" style="height: 100px"></div>-->
+ 
+
+
+ <!-- <div class="container-fluid">
+  <div class="col-sm-2"></div>
+             
+  <img src="../static/images/ss.jpg" class="rounded-circle" alt="HaveIt" width="100" height="150"> 
+  </div>
+</div>-->
+
+<div class="col-sm-1">
+
+<nav class="navbar navbar-expand-md navbar-dark text-success">
+       <div class=" col-sm-1 text-success">
+       <a class="navbar-brand text-success " href="#"><img src="/static/images/chandaa.png"  style="width:50%; height:60px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> 
+      </div>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse col-sm-0.5 text-success" id="navbarCollapse">
+          <ul class="navbar-nav" style="margin-left: 30px">
+            <li class="nav-item active">
+              <a class="nav-link active text-success" href="{{ url_for('Home') }}" > <i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-success" href="/Contact"><i class="fas fa-phone-square"></i>Contact </a>
+            </li>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link active" href="/display"><i class="fa fa-tv"></i>Dispaly</a>
+            </li> -->
+            <li class="nav-item"> 
+              <a class="nav-link active text-success" href="/About"><i class="fa fa-spinner"></i> About</a>
+            </li>
+              
+           
+            <li class="nav-item dropdown text-success">
+      <a class="nav-link active text-success dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" ><i class="fas fa-thumbs-up"></i> 
+        followus
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item text-success" href="/followus">Twitter</a>
+        <a class="dropdown-item text-success" href="/followus">Facebook</a>
+        <a class="dropdown-item text-success" href="/followus">Instagram</a>
+      </div>
+    </li>
+  <!-- <li class="nav-item">
+              <a class="nav-link active text-success" href="/Aadhar"><i class="fa fa-user" style="font-size:19px"></i> checkdetails </a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link active text-success" href="/states"><i class="fas fa-archway"></i> States </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-success" href="/add_schemes"><i class="fa fa-newspaper-o" style="font-size:19px"></i> StateSchemes </a>
+            </li>-->
+          </ul>
+        </div>
+        
+        
+        <div class="col-sm-6" ></div>
+         <!--  <form class="form-inline mt-2 mt-m d-0" >
+            <input class="form-control mr-sm-2" type="text"  style="padding-left:16px" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-4 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+          </form>-->
+           <ul class="navbar-nav  mr-auto">       
+             {% if current_user.is_authenticated %}
+             
+
+               {% if current_user.userType==1 %}
+               <li class="nav-item">
+                <a class="nav-link" href="/display">display</a>
+              </li>
+  
+                <div class="dropdown">
+                  <button type="button" class="btn btn text-success dropdown-toggle" data-toggle="dropdown">Admin</button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item nav-link text-success " href="/states"><i class="fas fa-archway"></i>States </a>
+                    
+                    <a class="dropdown-item nav-link text-success " href="/add_schemes"><i class="fa fa-newspaper-o"></i>State Schemes </a>
+                   </div>   
+                </div>
+                 {% endif %}
+
+            
+
+
+              <!--  <li class="nav-item">
+                  <a class="nav-link active text-success" href="/states"><i class="fas fa-archway"></i> States </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-success" href="/add_schemes"><i class="fa fa-newspaper-o" style="font-size:19px"></i> StateSchemes </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-success" href="/users"><i class="fa fa-users" style="font-size:19px"></i> users </a>
+                </li>
+              </li>-->
+
+           
+            <li class="nav-item">
+              <a class="nav-link active text-success" href="/status"><i class="fa fa-user" style="font-size:19px"></i> status </a>
+            </li>
+            <li>
+            <a class="nav-link active text-success " href="/Customers_data"><i class="fa fa-users" style="font-size:19px"></i> 
+            users </a> 
+          </li>
+                
+
+             <li class="nav-item">
+              <a class="nav-link active text-success" href="/Aadhar"><i class="fa fa-user" style="font-size:19px"></i> check details </a>
+            </li>
+             <li class="nav-item ">
+              <a class="nav-link active text-success" href="/logout"><i class="fas fa-sign-out-alt"></i> logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="/schemesall"><i class="fas fa-sign-out-alt"></i>Schemes</a>
+                         
+             </li> 
+             {% else %}
+             
+              <li class="nav-item active">
+                <a class="nav-link active text-success" href="{{url_for('signin')}}"><i class="fas fa-sign-in-alt" style="color:">
+                  </i> Signin <span class="sr-only">(current)</span>
+                </a>
+             </li>
+             
+             <!--<li class="nav-item active">
+              <a class="nav-link active text-success" href="signup"><i class="fa fa-user-plus"></i> SignUp</a>
+             </li>--> 
+              
+             {% endif %}
+           </ul>
+           <div id="google_translate_element"style="padding-left: 50px"></div>
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+      </div>
+      </nav>
+    </div>
+</div>
+</div>
+</nav>
+</nav>
+
+
+
+

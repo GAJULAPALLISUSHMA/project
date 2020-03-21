@@ -1,0 +1,39 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+
+<div class="row" style="margin-top: 100px">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<div class="dropdown dropright">
+		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+		      State GovtSchemes
+		    </button>
+		 
+		    <div class="dropdown-menu">
+			   {% for i in data %}
+			   		<a href="/schemes/{{i.statename}}"><h5>{{ i.statename }}</h5></a>
+			   {% endfor %}
+		      
+		    </div>
+  		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="dropdown dropright">
+		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+		      Central GovtSchemes
+		    </button>
+		    <div class="dropdown-menu">
+			   {% for i in a %}
+			   	<a href="/centralschemes/{{i.central_scheme_name}}"><h5>{{ i.central_scheme_name }}</h5></a>
+
+			   {% endfor %}
+
+		      
+		    </div>
+			   
+  		</div>
+	</div>
+	<div class="col-sm-2"></div>
+</div>
+
+{% endblock %}

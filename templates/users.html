@@ -1,0 +1,52 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+<div class="container">
+	<div class="table" style="border:1px solid black">
+		{% if current_user.userType==1 %}
+		<table class="table">
+			<tr>
+				<th>Name</th>
+				<th>Adhar No</th>
+				<th>Mobile No</th>
+				<th>Email</th>
+				<th>Password</th>
+				<th>Operations</th>
+			</tr>
+			{% for data in udata %}
+			<tr>
+				<td>{{ data.Name }}</td>
+				<td>{{ data.AdharNo }}</td>
+				<td>{{ data.Mobileno }}</td>
+				<td>{{ data.Emailaddress }}</td>
+				<td>{{ data.Password }}</td>
+				<td><button class="btn btn info"><a href="{{ url_for('editdata1',data_id=data.id)}}">edit</a></button>
+					<button class="btn btn danger"><a href="{{ url_for('deletedata',data_id=data.id)}}">delete</a></button>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	{%else%}
+	<table class="table">
+			<tr>
+				<th>Name</th>
+				<!--<th>Adhar No</th>
+				<th>Mobile No</th>-->
+				<th>Email</th>
+				<!--<th>Password</th>-->
+				<th>Operations</th>
+			</tr>
+			{% for data in udata %}
+			<tr>
+				<td>{{ data.Name }}</td>
+				<!--<td>{{ data.AdharNo }}</td>
+				<td>{{ data.Mobileno }}</td>-->
+				<td>{{ data.Emailaddress }}</td>
+				<!--<td>{{ data.Password }}</td>-->
+				<td><button class="btn btn info"><a href="{{ url_for('editdata1',data_id=data.id)}}">edit</a></button>
+					<button class="btn btn danger"><a href="{{ url_for('deletedata',data_id=data.id)}}">delete</a></button>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	{% endif %}
+{% endblock %}

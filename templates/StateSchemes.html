@@ -1,0 +1,44 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+<style>
+  .form-group{
+    padding-left: 40px;
+  }
+</style>
+
+<div class="container">
+<br><br>
+  <center><h2>State Schemes</h2></center><br>
+<div class="table" style="border: 1px solid black">
+  <form action="{{ url_for('Add_StateSchemes1') }}" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="schemename">Scheme Name:</label>
+      <input type="text" class="form-control" id="schemename" placeholder="Enter scheme name" name="schemename" required>
+    </div>
+    <div class="form-group">
+      <label for="link">Link:</label>
+      <input type="text" class="form-control" id="link" placeholder="Enter link" name="link" required>
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="Description">Description:</label>
+      <input type="text" class="form-control" id="Description" placeholder="Enter Description" name="description" required>
+    </div>
+    
+      <div class="form-group">
+      <label for="image">Upload IMAGE:</label>
+      <input type="file" class="form-control" style="height: 30px " id="" placeholder="upload image" name="file1" required>
+    </div>
+    <div class="form-group">
+      <label for="stid">State_id</label>
+      <input type="text" class="form-control" style="height: 30px " id="" placeholder="Enter State id(1 to 28)" name="stateid" required>
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+{% endblock %}

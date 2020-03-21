@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schemes</title>
+	<link rel="shortcut icon" href="static/images/aa.jpg" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+
+<div>
+	 {% with messages= get_flashed_messages(
+	 	with_categories=true) %}
+	 	{% if messages %}
+	 	{% for category,message in messages %}
+	 	  <div cass="alert alert-{{ category }}alert-dismissible fade show" role="alert">
+	 	  <strong>{{ message }}</strong>
+	 	  <button type="button" class="close"data-dismiss="alert" aria-label="Close">
+	 	  <span  aria-hidden="true">&times;</span>
+	 	</button>
+	 </div>
+	 {% endfor %}
+	{% endif %}
+  {% endwith %}
+</div>
+
+
+
+{% include 'includes/navbar.html' %}
+{% block body %}
+
+{% endblock %}
+ 
+
+<footer class="container-fluid">
+	<p>&copy:vani,since 1999 &middot; <a href="#">privacy</a> &middot;<a href="#">Terms</a></p>
+
+</footer>
+<style>
+	footer{
+		position:fixed;
+		width:100%;
+	}
+</style>
+</html>

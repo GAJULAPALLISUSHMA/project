@@ -1,0 +1,28 @@
+{% extends 'commonlayout.html' %}
+{% block body %}
+
+<div class="container" style="margin-top: 100px">
+<div class="row container">
+{%if schemes %}
+{% for scheme in schemes %}
+<div class="col-md-4">
+
+<div class="card">
+<h4 class="card-title">{{ scheme.name }}</h4>
+       
+<img class="rounded-circle card-img-top" style="height: 100px;width: 100%" src="/static/upload_files/{{ scheme.image }}" alt="scheme">
+<div class="card-boby">
+<p class="card-text"><i>{{ scheme.description }}  </i></p>
+<a href="{{ scheme.link }}"class="btn btn-primary" target="_tab"> ClickLink </a>
+
+</div>
+
+</div>
+</div>
+{% endfor %}
+            {% else %}
+
+{% endif %}
+
+</div>
+{% endblock %}
